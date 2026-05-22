@@ -42,10 +42,13 @@ function BackgroundBlobs() {
    ================================================================ */
 function MobileCards() {
   return (
-    <div className="relative mt-8 w-full max-w-[360px] lg:hidden" style={{ height: 260 }}>
+    <div className="relative mt-16 w-full max-w-[360px] lg:hidden" style={{ height: 260 }}>
       <div
         className="relative h-[260px] w-[360px]"
-        style={{ transformOrigin: "top left" }}
+        style={{
+          transformOrigin: "top left",
+          transform: "scale(min(1, calc((100vw - 32px) / 360)))"
+        }}
       >
         {/* Billing — top right */}
         <FloatingCard
@@ -53,11 +56,13 @@ function MobileCards() {
           textColor="#ffffff"
           rotation={10.2}
           iconSrc="/icons/billing.svg"
+          iconRotation={-12}
           label="Billing"
           shadowColor="rgba(47,70,255,0.28)"
-          className="right-1 top-2 !h-[46px] !w-[166px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[18px]"
+          className="right-1 top-2 !h-[46px] !w-[166px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[14px]"
           floatSpeed="mid"
           animDelay={0.1}
+          iconSize={24}
         />
 
         {/* Matters — left */}
@@ -66,11 +71,13 @@ function MobileCards() {
           textColor="#ffffff"
           rotation={-10.2}
           iconSrc="/icons/matter.svg"
+          iconRotation={12}
           label="Matters"
           shadowColor="rgba(230,126,43,0.28)"
-          className="left-[6px] top-[10px] !h-[46px] !w-[151px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[18px]"
+          className="left-[6px] top-[10px] !h-[46px] !w-[151px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[14px]"
           floatSpeed="slow"
           animDelay={0.2}
+          iconSize={24}
         />
 
         {/* Portal card — center */}
@@ -88,11 +95,13 @@ function MobileCards() {
           textColor="#f08c2b"
           rotation={11.3}
           iconSrc="/icons/task.svg"
+          iconRotation={-24.6}
           label="Tasks"
           shadowColor="rgba(47,37,77,0.35)"
-          className="left-[36px] top-[130px] !h-[46px] !w-[166px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[18px]"
+          className="left-[36px] top-[130px] !h-[46px] !w-[166px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[14px]"
           floatSpeed="mid"
           animDelay={0.45}
+          iconSize={24}
         />
 
         {/* Documents — bottom right */}
@@ -101,11 +110,13 @@ function MobileCards() {
           textColor="#f08c2b"
           rotation={-5.7}
           iconSrc="/icons/document.svg"
+          iconRotation={5.7}
           label="Documents"
           shadowColor="rgba(47,37,77,0.35)"
-          className="left-[145px] top-[190px] !h-[46px] !w-[201px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[18px]"
+          className="left-[145px] top-[190px] !h-[46px] !w-[201px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[14px]"
           floatSpeed="mid"
           animDelay={0.55}
+          iconSize={24}
         />
       </div>
     </div>
@@ -117,18 +128,20 @@ function MobileCards() {
    ================================================================ */
 function DesktopCards() {
   return (
-    <div className="absolute inset-0 z-10 hidden lg:block">
+    <div className="absolute inset-0 z-10 hidden lg:block translate-y-[60px]">
       {/* Billing — top right area */}
       <FloatingCard
         bgColor="#2f46ff"
         textColor="#ffffff"
         rotation={9.35}
         iconSrc="/icons/billing.svg"
+        iconRotation={-11}
         label="Billing"
         shadowColor="rgba(47,70,255,0.28)"
-        className="right-[120px] top-[240px] h-[46px] w-[166px]"
+        className="right-[120px] top-[240px] w-[430px]"
         floatSpeed="mid"
         animDelay={0.2}
+        iconSize={64}
       />
 
       {/* Matters — left-middle */}
@@ -137,18 +150,20 @@ function DesktopCards() {
         textColor="#ffffff"
         rotation={-9.35}
         iconSrc="/icons/matter.svg"
+        iconRotation={11}
         label="Matters"
         shadowColor="rgba(230,126,43,0.28)"
-        className="left-[200px] top-[390px] h-[46px] w-[151px]"
+        className="left-[200px] top-[390px] w-[360px]"
         floatSpeed="slow"
         animDelay={0.35}
+        iconSize={64}
       />
 
       {/* Portal card — center right */}
       <FloatingCard
         variant="portal"
         rotation={3.4}
-        className="left-[580px] top-[390px] h-[46px] w-[245px] [&_p:nth-child(2)]:hidden [&_p:nth-child(3)]:hidden [&_p:first-child]:!text-[14px] [&_p:first-child]:!leading-none"
+        className="left-[580px] top-[390px] h-[96px] w-[390px] !pl-10 [&>div:last-child]:ml-2"
         floatSpeed="slow"
         animDelay={0.5}
         shadowColor="rgba(106,123,214,0.30)"
@@ -160,11 +175,13 @@ function DesktopCards() {
         textColor="#f08c2b"
         rotation={0}
         iconSrc="/icons/task.svg"
+        iconRotation={-13.3}
         label="Tasks"
         shadowColor="rgba(47,37,77,0.35)"
-        className="left-[calc(50%-200px)] top-[530px] h-[46px] w-[166px]"
+        className="left-[calc(50%-200px)] top-[530px] w-[360px]"
         floatSpeed="mid"
         animDelay={0.6}
+        iconSize={64}
       />
 
       {/* Documents — bottom right */}
@@ -173,11 +190,13 @@ function DesktopCards() {
         textColor="#f08c2b"
         rotation={-6.8}
         iconSrc="/icons/document.svg"
+        iconRotation={6.8}
         label="Documents"
         shadowColor="rgba(47,37,77,0.35)"
-        className="right-[80px] top-[500px] h-[46px] w-[201px]"
+        className="right-[-82px] top-[500px] w-[480px]"
         floatSpeed="mid"
         animDelay={0.7}
+        iconSize={64}
       />
     </div>
   );
@@ -226,7 +245,7 @@ export default function HeroSection() {
           {/* Headline */}
           <h1
             ref={headlineRef}
-            className="w-full max-w-[250px] text-left text-[28px] font-light leading-[1.08] tracking-[-0.03em] text-[#7377a8] sm:w-auto sm:max-w-none sm:text-[43px] dark:text-[#b3bce5]"
+            className="w-full max-w-[320px] text-left text-[32px] font-light leading-[1.08] tracking-[-0.03em] text-[#7377a8] sm:w-auto sm:max-w-none sm:text-[50px] dark:text-[#b3bce5]"
             style={{ wordSpacing: "0.08em", opacity: 0 }}
           >
             {/* Mobile version */}
@@ -262,7 +281,7 @@ export default function HeroSection() {
           {/* Subtext */}
           <p
             ref={subtextRef}
-            className="mt-6 w-full max-w-[260px] text-left text-[16px] font-normal leading-[1.45] text-[#5569ff] sm:w-[70%] sm:max-w-[460px] sm:text-[18px] lg:text-[19px] dark:text-[#88a0ff]"
+            className="mt-6 w-full max-w-[280px] text-left text-[17px] font-normal leading-[1.45] text-[#5569ff] sm:w-[80%] sm:max-w-[540px] sm:text-[20px] lg:text-[21px] dark:text-[#88a0ff]"
             style={{ wordSpacing: "0.06em", opacity: 0 }}
           >
             Track matters, coordinate schedules, manage clients, centralize

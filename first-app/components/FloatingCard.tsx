@@ -23,6 +23,8 @@ interface FloatingCardBaseProps {
   iconSize?: number;
   /** Gap between icon and label. Default 12 */
   gap?: number;
+  /** Custom class for the label */
+  labelClassName?: string;
 }
 
 interface FloatingCardPortalProps {
@@ -72,7 +74,7 @@ export default function FloatingCard(props: FloatingCardProps) {
 
     // Continuous float
     gsap.to(el, {
-      y: -10,
+      y: -20,
       duration: floatDuration,
       repeat: -1,
       yoyo: true,
@@ -106,7 +108,7 @@ export default function FloatingCard(props: FloatingCardProps) {
         onMouseLeave={handleMouseLeave}
         className={`card-base absolute flex items-center rounded-[90px] bg-[#9ea6ef]
           shadow-[0_14px_32px_rgba(106,123,214,0.30)] overflow-hidden
-          cursor-default
+          cursor-default gap-[10px] px-[14px]
           ${props.className ?? ""}`}
         style={{
           transform: `rotate(${rot}deg)`,
@@ -114,10 +116,10 @@ export default function FloatingCard(props: FloatingCardProps) {
         }}
       >
         {/* Orange accent bar */}
-        <div className="absolute left-[12px] top-1/2 -translate-y-1/2 h-[38px] w-[5px] rounded-full bg-[#eb7a24]" />
+        <div className="shrink-0 h-[38px] w-[5px] rounded-full bg-[#eb7a24]" />
 
         {/* Avatar */}
-        <div className="ml-[46px] grid h-[46px] w-[46px] shrink-0 place-items-center rounded-full bg-[#f4c8ab]">
+        <div className="shrink-0 grid h-[46px] w-[46px] place-items-center rounded-full bg-[#f4c8ab]">
           <Image
             src="/icons/flaticon-avatar.png"
             alt=""
@@ -129,9 +131,9 @@ export default function FloatingCard(props: FloatingCardProps) {
         </div>
 
         {/* Text block */}
-        <div className="min-w-0 ml-3">
+        <div className="min-w-0 ml-1">
           <p className="truncate text-[18px] font-medium leading-none text-[#0c144b]">
-            John Doe - Portal
+            Vansh Aggarwal - Portal
           </p>
           <p className="mt-1 max-w-[180px] text-[11px] leading-[1.2] text-[#797DA7] line-clamp-2">
             Hey! Could you please review a document for me?
@@ -150,11 +152,13 @@ export default function FloatingCard(props: FloatingCardProps) {
     textColor,
     rotation = 0,
     iconSrc,
+    iconRotation = 0,
     label,
     shadowColor,
     className = "",
-    iconSize = 24,
-    gap = 8,
+    iconSize = 80,
+    gap = 12,
+    labelClassName,
   } = props;
 
   const handleMouseEnterDefault = () => {
@@ -172,7 +176,7 @@ export default function FloatingCard(props: FloatingCardProps) {
       ref={cardRef}
       onMouseEnter={handleMouseEnterDefault}
       onMouseLeave={handleMouseLeaveDefault}
-      className={`card-base absolute flex items-center justify-center rounded-full px-4 py-2
+      className={`card-base absolute flex h-[90px] items-center rounded-full px-5 py-3
         cursor-default
         ${className}`}
       style={{
@@ -183,10 +187,11 @@ export default function FloatingCard(props: FloatingCardProps) {
         gap,
       }}
     >
-      {/* Icon container */}
+      {/* Icon container — keeps icon counter-rotated */}
       <span
         className="shrink-0 flex items-center justify-center"
         style={{
+          transform: `rotate(${iconRotation}deg)`,
           width: iconSize,
           height: iconSize,
         }}
@@ -204,7 +209,7 @@ export default function FloatingCard(props: FloatingCardProps) {
 
       {/* Label */}
       <span
-        className="text-[18px] font-normal tracking-tight whitespace-nowrap"
+        className={`text-[26px] font-normal tracking-tight whitespace-nowrap ${labelClassName ?? ""}`}
         style={{ color: textColor }}
       >
         {label}

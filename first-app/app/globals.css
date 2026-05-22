@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #f6f7fb;
@@ -41,12 +42,14 @@
   font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0c0f1a;
-    --foreground: #e2e8f0;
-  }
+
+
+:root.dark {
+  --background: #0c0f1a;
+  --foreground: #e2e8f0;
 }
+
+
 
 /* ── Base ── */
 * {
