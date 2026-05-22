@@ -84,7 +84,7 @@ function MobileCards() {
         <FloatingCard
           variant="portal"
           rotation={5.5}
-          className="left-[111px] top-[80px] !h-[46px] !w-[245px] !rounded-[90px] !px-3.5 [&_p:nth-child(2)]:hidden [&_p:nth-child(3)]:hidden [&_p:first-child]:!text-[14px] [&_p:first-child]:!leading-none"
+          className="left-[111px] top-[80px] !h-[46px] !w-[245px] !rounded-[90px] !px-3.5"
           floatSpeed="slow"
           animDelay={0.35}
         />

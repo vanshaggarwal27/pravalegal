@@ -132,13 +132,13 @@ export default function FloatingCard(props: FloatingCardProps) {
 
         {/* Text block */}
         <div className="min-w-0 ml-1">
-          <p className="truncate text-[18px] font-medium leading-none text-[#0c144b]">
+          <p className="truncate text-[14px] lg:text-[18px] font-medium leading-none text-[#0c144b]">
             Vansh Aggarwal - Portal
           </p>
-          <p className="mt-1 max-w-[180px] text-[11px] leading-[1.2] text-[#797DA7] line-clamp-2">
+          <p className="mt-1 max-w-[180px] text-[11px] leading-[1.2] text-[#797DA7] hidden lg:line-clamp-2">
             Hey! Could you please review a document for me?
           </p>
-          <p className="mt-1.5 truncate text-[11px] leading-none text-[#6a77bc]">
+          <p className="mt-0.5 lg:mt-1.5 truncate text-[10px] lg:text-[11px] leading-none text-[#8e95c3] lg:text-[#6a77bc]">
             MAT-2233 - 2 h ago
           </p>
         </div>
