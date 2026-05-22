@@ -53,13 +53,11 @@ function MobileCards() {
           textColor="#ffffff"
           rotation={10.2}
           iconSrc="/icons/billing.svg"
-          iconRotation={-12}
           label="Billing"
           shadowColor="rgba(47,70,255,0.28)"
           className="right-1 top-2 !h-[46px] !w-[166px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[18px]"
           floatSpeed="mid"
           animDelay={0.1}
-          iconSize={24}
         />
 
         {/* Matters — left */}
@@ -68,13 +66,11 @@ function MobileCards() {
           textColor="#ffffff"
           rotation={-10.2}
           iconSrc="/icons/matter.svg"
-          iconRotation={12}
           label="Matters"
           shadowColor="rgba(230,126,43,0.28)"
           className="left-[6px] top-[10px] !h-[46px] !w-[151px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[18px]"
           floatSpeed="slow"
           animDelay={0.2}
-          iconSize={24}
         />
 
         {/* Portal card — center */}
@@ -92,13 +88,11 @@ function MobileCards() {
           textColor="#f08c2b"
           rotation={11.3}
           iconSrc="/icons/task.svg"
-          iconRotation={-13}
           label="Tasks"
           shadowColor="rgba(47,37,77,0.35)"
           className="left-[36px] top-[130px] !h-[46px] !w-[166px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[18px]"
           floatSpeed="mid"
           animDelay={0.45}
-          iconSize={24}
         />
 
         {/* Documents — bottom right */}
@@ -107,13 +101,11 @@ function MobileCards() {
           textColor="#f08c2b"
           rotation={-5.7}
           iconSrc="/icons/document.svg"
-          iconRotation={6.7}
           label="Documents"
           shadowColor="rgba(47,37,77,0.35)"
           className="left-[145px] top-[190px] !h-[46px] !w-[201px] !rounded-[100px] !px-4 !py-2.5 [&>span:last-child]:!text-[18px]"
           floatSpeed="mid"
           animDelay={0.55}
-          iconSize={24}
         />
       </div>
     </div>
@@ -132,13 +124,11 @@ function DesktopCards() {
         textColor="#ffffff"
         rotation={9.35}
         iconSrc="/icons/billing.svg"
-        iconRotation={-11}
         label="Billing"
         shadowColor="rgba(47,70,255,0.28)"
-        className="right-[120px] top-[240px] w-[430px]"
+        className="right-[120px] top-[240px] h-[46px] w-[166px]"
         floatSpeed="mid"
         animDelay={0.2}
-        iconSize={64}
       />
 
       {/* Matters — left-middle */}
@@ -147,20 +137,18 @@ function DesktopCards() {
         textColor="#ffffff"
         rotation={-9.35}
         iconSrc="/icons/matter.svg"
-        iconRotation={11}
         label="Matters"
         shadowColor="rgba(230,126,43,0.28)"
-        className="left-[200px] top-[390px] w-[360px]"
+        className="left-[200px] top-[390px] h-[46px] w-[151px]"
         floatSpeed="slow"
         animDelay={0.35}
-        iconSize={64}
       />
 
       {/* Portal card — center right */}
       <FloatingCard
         variant="portal"
         rotation={3.4}
-        className="left-[580px] top-[390px] h-[96px] w-[390px] !pl-10 [&>div:last-child]:ml-2"
+        className="left-[580px] top-[390px] h-[46px] w-[245px] [&_p:nth-child(2)]:hidden [&_p:nth-child(3)]:hidden [&_p:first-child]:!text-[14px] [&_p:first-child]:!leading-none"
         floatSpeed="slow"
         animDelay={0.5}
         shadowColor="rgba(106,123,214,0.30)"
@@ -172,13 +160,11 @@ function DesktopCards() {
         textColor="#f08c2b"
         rotation={0}
         iconSrc="/icons/task.svg"
-        iconRotation={0}
         label="Tasks"
         shadowColor="rgba(47,37,77,0.35)"
-        className="left-[calc(50%-200px)] top-[530px] w-[360px]"
+        className="left-[calc(50%-200px)] top-[530px] h-[46px] w-[166px]"
         floatSpeed="mid"
         animDelay={0.6}
-        iconSize={64}
       />
 
       {/* Documents — bottom right */}
@@ -187,13 +173,11 @@ function DesktopCards() {
         textColor="#f08c2b"
         rotation={-6.8}
         iconSrc="/icons/document.svg"
-        iconRotation={8}
         label="Documents"
         shadowColor="rgba(47,37,77,0.35)"
-        className="right-[-82px] top-[500px] w-[480px]"
+        className="right-[80px] top-[500px] h-[46px] w-[201px]"
         floatSpeed="mid"
         animDelay={0.7}
-        iconSize={64}
       />
     </div>
   );

@@ -150,12 +150,11 @@ export default function FloatingCard(props: FloatingCardProps) {
     textColor,
     rotation = 0,
     iconSrc,
-    iconRotation = 0,
     label,
     shadowColor,
     className = "",
-    iconSize = 80,
-    gap = 12,
+    iconSize = 24,
+    gap = 8,
   } = props;
 
   const handleMouseEnterDefault = () => {
@@ -173,7 +172,7 @@ export default function FloatingCard(props: FloatingCardProps) {
       ref={cardRef}
       onMouseEnter={handleMouseEnterDefault}
       onMouseLeave={handleMouseLeaveDefault}
-      className={`card-base absolute flex h-[90px] items-center rounded-full px-5 py-3
+      className={`card-base absolute flex items-center justify-center rounded-full px-4 py-2
         cursor-default
         ${className}`}
       style={{
@@ -184,11 +183,10 @@ export default function FloatingCard(props: FloatingCardProps) {
         gap,
       }}
     >
-      {/* Icon container — keeps icon counter-rotated */}
+      {/* Icon container */}
       <span
         className="shrink-0 flex items-center justify-center"
         style={{
-          transform: `rotate(${iconRotation}deg)`,
           width: iconSize,
           height: iconSize,
         }}
@@ -206,7 +204,7 @@ export default function FloatingCard(props: FloatingCardProps) {
 
       {/* Label */}
       <span
-        className="text-[40px] font-normal tracking-tight whitespace-nowrap"
+        className="text-[18px] font-normal tracking-tight whitespace-nowrap"
         style={{ color: textColor }}
       >
         {label}
