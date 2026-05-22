@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="min-h-full flex flex-col bg-[#f6f7fb] dark:bg-[#0c0f1a] transition-colors duration-300">
+      <body className="min-h-full flex flex-col bg-[#f6f7fb] dark:bg-[#0c0f1a] transition-colors duration-300" suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <ThemeToggle />
